@@ -19,6 +19,7 @@ class WeatherApi {
     try {
       if (response.statusCode.toString().startsWith("2")) {
         _data = WeatherData.toJson(jsonDecode(response.body));
+        print(_data?.getWeatherData());
         _location = WeatherLocation.toJson(jsonDecode(response.body));
       } else {
         print("city not found ");

@@ -12,13 +12,13 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   bool isTextFieldFocus = false;
   static final _inputController = TextEditingController();
-  String _inputTextField = "";
+  String _inputTextField = "douala";
 
   void setInputController(String text) {
     _inputController.text = text;
   }
 
-  static String getInputController() {
+  String getInputController() {
     return _inputController.text;
   }
 
@@ -67,7 +67,7 @@ class HomePageState extends State<HomePage> {
             //On click send input data to the fetch api controller
             IconButton(
                 onPressed: () {
-                  setState(() => _inputTextField = _inputController.text);
+                  setState(() => _inputTextField = getInputController());
                 },
                 icon: const Icon(Icons.search)),
           ],

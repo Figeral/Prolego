@@ -11,7 +11,7 @@ class WeatherData {
   ///NB:The two methods will give the same result i.e producing an instance of the weatherData class
   factory WeatherData.toJson(Map<String, dynamic> json) {
     return WeatherData(json['main']['temp'], json['main']['humidity'],
-        json['wind']['speed'], json['weather'][0]['desc']);
+        json['wind']['speed'], json['weather'][0]['description']);
   }
 
   ///Create a  List variable that will receive the getter all together method.

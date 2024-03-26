@@ -6,7 +6,7 @@ import 'package:prolego/controller/api_fetcher.dart';
 
 class Body extends StatefulWidget {
   final String value;
-  Body({Key? key, required this.value}) : super(key: key);
+  const Body({Key? key, required this.value}) : super(key: key);
 
   @override
   State<Body> createState() => _BodyState();
@@ -23,9 +23,9 @@ class _BodyState extends State<Body> {
     setState(() {
       try {
         print(widget.value);
-        api.fetchFromApi("yaounde");
+        api.fetchFromApi(widget.value);
         _data = api.getWeatherDataFetched();
-
+        print("Weather is ${_data?.getWeatherData()[0]}");
         _location = api.getWeatherLocationFetched();
       } catch (e) {
         print("The problem coming from :$e");
@@ -35,9 +35,9 @@ class _BodyState extends State<Body> {
 
   @override
   void initState() {
-    super.initState();
-    print("Weather is ${_data?.getWeatherData()[0]}");
     fetcher();
+
+    super.initState();
   }
 
   @override
