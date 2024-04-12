@@ -42,18 +42,20 @@ class _BodyState extends State<Body> {
     });
   }
 
-  String getAnimation(String mainDesc) {
+  String getAnimation(String? mainDesc) {
     String value = "";
-    if (mainDesc.contains("cloud")) {
-      value = "images/animation/cloudy.json";
-    } else if (mainDesc.contains("drizzle")) {
-      value = "images/animation/rainy.json";
-    } else if (mainDesc.contains("rain")) {
-      value = "images/animation/rainy.json";
-    } else if (mainDesc.contains("thunder")) {
-      value = "images/animation/thunder.json";
-    } else {
-      value = "images/animation/sunny.json";
+    if (mainDesc != null) {
+      if (mainDesc.contains("cloud")) {
+        value = "images/animation/cloudy.json";
+      } else if (mainDesc.contains("drizzle")) {
+        value = "images/animation/rainy.json";
+      } else if (mainDesc.contains("rain")) {
+        value = "images/animation/rainy.json";
+      } else if (mainDesc.contains("thunder")) {
+        value = "images/animation/storm.json";
+      } else {
+        value = "images/animation/sunny.json";
+      }
     }
     return value;
   }

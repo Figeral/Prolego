@@ -64,6 +64,7 @@ flutter:
     - images/animation/sunny.json
     - images/animation/rainy.json
     - images/animation/cloudy.json
+    - images/animation/storm.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
