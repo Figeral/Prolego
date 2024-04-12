@@ -1,3 +1,5 @@
+import 'package:prolego/utiles.dart';
+
 class WeatherData {
   double _temp, _windSpeed;
   int _humidity;
@@ -25,7 +27,12 @@ class WeatherData {
   }
 
   List getWeatherData() {
-    return [_temp, _humidity, _windSpeed, _desc];
+    return [
+      subtract(_temp, 273).toStringAsFixed(2),
+      _humidity,
+      _windSpeed,
+      _desc
+    ];
   }
 }
 

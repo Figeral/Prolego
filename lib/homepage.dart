@@ -1,5 +1,6 @@
 import 'package:prolego/body.dart';
 import 'package:flutter/material.dart';
+import 'package:prolego/controller/api_fetcher.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  bool isClicked = true;
   bool isTextFieldFocus = false;
   static final _inputController = TextEditingController();
   String _inputTextField = "douala";
@@ -67,7 +69,12 @@ class HomePageState extends State<HomePage> {
             //On click send input data to the fetch api controller
             IconButton(
                 onPressed: () {
-                  setState(() => _inputTextField = getInputController());
+                  setState(() {
+                    isClicked = true;
+                    _inputTextField = getInputController();
+                    isClicked ? WeatherApi(isClicked) : null;
+                  });
+                  print("Entered value :$_inputTextField");
                 },
                 icon: const Icon(Icons.search)),
           ],
