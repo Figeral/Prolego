@@ -19,7 +19,7 @@ class WeatherData {
   ///Create a  List variable that will receive the getter all together method.
   ///That will enable not to have initialize each element separately.
   void setWeatherData(
-      double temp, int humidity, double windSpeed, String desc) {
+      double temp, int humidity, double windSpeed, String? desc) {
     _temp = temp;
     _humidity = humidity;
     _windSpeed = windSpeed;
